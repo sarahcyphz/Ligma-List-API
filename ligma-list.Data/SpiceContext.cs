@@ -10,5 +10,11 @@ namespace ligma_list.Data
         }
 
         public DbSet<Item> Items { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+            DbIntializer.Intialize(builder);
+        }
     }
 }
