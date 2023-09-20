@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ligma-list.Api", "ligma-lis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ligma-list.Data", "ligma-list.Data\ligma-list.Data.csproj", "{8C8217B4-73BE-4B0E-9847-F0FE3AAF15B4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{E3900C25-842B-4FB5-932C-F834B9627D90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ligma-list.Domain.Tests", "tests\ligma-list.Domain.Tests\ligma-list.Domain.Tests.csproj", "{AD86B160-87A3-4E97-8374-DAE323A29C2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +34,12 @@ Global
 		{8C8217B4-73BE-4B0E-9847-F0FE3AAF15B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C8217B4-73BE-4B0E-9847-F0FE3AAF15B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C8217B4-73BE-4B0E-9847-F0FE3AAF15B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD86B160-87A3-4E97-8374-DAE323A29C2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD86B160-87A3-4E97-8374-DAE323A29C2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD86B160-87A3-4E97-8374-DAE323A29C2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD86B160-87A3-4E97-8374-DAE323A29C2A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD86B160-87A3-4E97-8374-DAE323A29C2A} = {E3900C25-842B-4FB5-932C-F834B9627D90}
 	EndGlobalSection
 EndGlobal
