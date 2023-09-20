@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ligma-list.Domain\ligma-list.Domain.csproj" />
+    <ProjectReference Include="..\ligma-list.Data\ligma-list.Data.csproj" />
   </ItemGroup>
 
 </Project>
