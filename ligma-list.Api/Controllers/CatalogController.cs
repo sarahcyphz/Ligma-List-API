@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using ligma_list.Domain.catalog;
+using ligma_list.Data;
 
 namespace ligma_list.Api.Controllers
 {
@@ -7,16 +8,17 @@ namespace ligma_list.Api.Controllers
     [Route("/catalog")]
     public class CatalogController : ControllerBase
     {
+        private readonly SpiceContext _db;
+
+        public CatalogController(SpiceContext db)
+        {
+            _db = db;
+        }
+
         [HttpGet]
         public IActionResult GetItems()
         {
-            var items = new List<Item>()
-            {
-                new Item("Paprika"),
-                new Item("Garlic Salt"),
-            };
-
-            return Ok(items);
+            return Ok(_db.Items);
         }
 
         [HttpGet("{id:int}")]
