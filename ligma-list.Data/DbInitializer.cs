@@ -8,8 +8,8 @@ namespace ligma_list.Data
         public static void Intialize(ModelBuilder builder)
         {
             builder.Entity<Item>().HasData(
-                new Item("Tajin") { Id = 1 },
-                new Item("Chili Powder") { Id = 2 }
+                new Item("Tajin", 1) { Id = 1 },
+                new Item("Chili Powder", 1) { Id = 2 }
             );
         }
     }
