@@ -40,6 +40,18 @@ namespace ligma_list.Api.Controllers
             return CreatedAtAction($"/catalog/{item.Id}", item);
         }
 
+        [HttpPut("{id:int}")]
+        public IActionResult PutItem(int id, Item item)
+        {
+            if (id != item.Id)
+            {
+                return BadRequest();
+            }
+            _db.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            _db.SaveChanges();
+            return NoContent();
+        }
+
         [HttpDelete("{id:int}")]
         public IActionResult DeleteItem(int id)
         {
