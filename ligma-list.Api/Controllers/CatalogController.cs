@@ -18,7 +18,9 @@ namespace ligma_list.Api.Controllers
         [HttpGet]
         public IActionResult GetItems()
         {
-            return Ok(_db.Items);
+            var sortedItems = _db.Items.OrderByDescending(item => item.IsNeeded).ToList();
+
+            return Ok(sortedItems);
         }
 
         [HttpGet("{id:int}")]
@@ -41,13 +43,15 @@ namespace ligma_list.Api.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public IActionResult PutItem(int id, Item item)
+        public IActionResult PutItem(int id, Item itemUpdate)
         {
-            if (id != item.Id)
+            var existingItem = _db.Items.Find(id);
+
+            if (existingItem == null)
             {
-                return BadRequest();
+                return NotFound();
             }
-            _db.Entry(item).State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            existingItem.IsNeeded = itemUpdate.IsNeeded;
             _db.SaveChanges();
             return NoContent();
         }
